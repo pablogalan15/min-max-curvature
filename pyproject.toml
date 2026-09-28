@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "min-max-curvature"
+version = "0.1.0"
+description = "Smooth transition curves of minimal maximal curvature, with an explicit convergent smooth approximation family"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Pablo Galán Játiva"}]
+requires-python = ">=3.8"
+dependencies = [
+    "numpy>=1.19",
+    "scipy>=1.5",
+]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.3"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+min-max-curvature = "min_max_curvature.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
